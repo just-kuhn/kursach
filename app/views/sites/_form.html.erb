@@ -1,0 +1,47 @@
+<%= form_for(@site) do |f| %>
+  <% if @site.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@site.errors.count, "error") %> prohibited this site from being saved:</h2>
+
+      <ul>
+      <% @site.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :tags %><br>
+    <%= f.text_area :tags %>
+  </div>
+  <div class="field">
+    <%= f.label :logo_url %><br>
+    <%= f.text_field :logo_url %>
+  </div>
+    <div class="field">
+      <%= f.label :temp_id %><br>
+      <% Temp.all.each do |temp| %>
+          <%= f.radio_button :temp_id, temp.id %>
+          <%= image_tag temp.temp_image, style: 'width: 10%; height: 10%;' %>
+      <% end %>
+    </div>
+    <div class="field">
+      <%= f.label :menu_id %><br>
+      <% Menu.all.each do |menu| %>
+          <%= f.radio_button :menu_id, menu.id %>
+          <%= image_tag menu.menu_image, style: 'width: 10%; height: 10%;'%>
+      <% end %>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

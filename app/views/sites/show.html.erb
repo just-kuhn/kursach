@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="Menu.css" rel="stylesheet">
+  <link href="font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../font-awesome-4.6.1/css/font-awesome.min.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <p id="notice"><%= notice %></p>
+
+
+  <script src="jquery-3.0.0.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Menu.js"></script>
+  <title>Menu</title>
+</head>
+
+<body>
+
+
+<p>
+  <strong>Description:</strong>
+  <%= @site.description %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @site.tags %>
+</p>
+<p>
+  <strong>Logo url:</strong>
+  <%= @site.logo_url %>
+</p>
+
+
+<p>
+  <strong>Menu:</strong>
+  <%= @site.menu_id %>
+</p>
+
+<i class="fa fa-facebook"></i>
+<%= link_to 'Edit', edit_site_path(@site) %> |
+<%= link_to 'Back', sites_path %>
+
+<% if @site.temp_id == 1 %>
+    <div class="wrapper">
+
+      <header class="header">
+        <%= @site.title %>
+      </header><!-- .header-->
+
+      <main class="content">
+
+      </main><!-- .content -->
+
+    </div><!-- .wrapper -->
+
+    <footer class="footer">
+
+    </footer><!-- .footer -->
+
+<!-- MENU -->
+<nav class="menu" id="theMenu">
+  <div class="menu-wrap">
+    <h1 class="logo"><a href="homepage.html#home">up</a></h1>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.facebook.com/sashka.osipov" target="_blank"><i class="fa fa-facebook"></i></a>
+    <a href="https://twitter.com/Fusionmeow" target="_blank"><i class="fa fa-twitter"></i></a>
+    <a href="https://vk.com/fusionqq" target="_blank"><i class="fa fa-vk"></i></a>
+    <a href="https://www.instagram.com/alexadrias" target="_blank"><i class="fa fa-instagram"></i></a>
+  </div>
+
+  <!-- Menu button -->
+  <div id="menuToggle"><i class="fa fa-bars"></i></div>
+</nav>
+
+
+
+
+<% end %>
+</body>
+</html>
